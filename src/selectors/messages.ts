@@ -1,4 +1,4 @@
-import { IMessage, IMessageFilters } from '../pages/chat/definitions';
+import { IMessage, IMessageFilters, UserType } from '../pages/chat/definitions';
 
 type FilterMessages = (
   filters: IMessageFilters,
@@ -6,12 +6,26 @@ type FilterMessages = (
 ) => IMessage[];
 
 export const filterMessages: FilterMessages = (filters, messages) => {
-  const { text, user } = filters;
-  const pattern = new RegExp(text ?? '', 'gi');
+  const { text, userType } = filters;
+  const pattern = new RegExp(text, 'gi');
 
-  return messages.filter((m) => {
-    const textMatch = typeof text === 'undefined' || m.message.match(pattern);
-    const userMatch = typeof user === 'undefined' || m.user === user;
-    return textMatch && userMatch;
+  return messages.filter((message) => {
+    const textMatch = message.text.match(pattern);
+    let userTypeMatch = false;
+
+    switch (userType) {
+      case UserType.Admin:
+        userTypeMatch = message.admin;
+        break;
+      case UserType.User:
+        userTypeMatch = !message.admin;
+        break;
+      case UserType.All:
+      default:
+        userTypeMatch = true;
+        break;
+    }
+
+    return textMatch && userTypeMatch;
   });
 };

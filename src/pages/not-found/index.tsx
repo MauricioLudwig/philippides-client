@@ -1,7 +1,6 @@
 import React from 'react';
+import { Redirect } from 'react-router-dom';
 
-// TODO design not found page
-
-const NotFound = () => <div>404!</div>;
+const NotFound = () => <Redirect to="/" />;
 
 export default NotFound;

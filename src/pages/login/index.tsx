@@ -25,7 +25,7 @@ const Login = () => {
 
   return (
     <div>
-      <Debug data={state} />
+      <Debug data={[]} />
       <input name="username" value={username} onChange={onChangeHandler} />
       <button>Talk!</button>
       {loading && <p>LOADING!</p>}

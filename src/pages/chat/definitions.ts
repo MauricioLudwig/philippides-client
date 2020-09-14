@@ -13,11 +13,17 @@ export interface IMessage {
   id: string;
   admin: boolean;
   user: string | null;
-  message: string;
+  text: string;
   created: number;
 }
 
+export enum UserType {
+  All = '0',
+  Admin = '1',
+  User = '2',
+}
+
 export interface IMessageFilters {
-  text?: string;
-  user?: string;
+  text: string;
+  userType: UserType;
 }

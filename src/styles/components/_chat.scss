@@ -1,0 +1,50 @@
+.chat-layout {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  width: 100vw;
+
+  .window {
+    flex: 1;
+    background: yellow;
+    display: flex;
+    flex-direction: column;
+
+    .window__filters-container {
+      background: green;
+    }
+
+    .window__messages-container {
+      background: magenta;
+      flex: 1;
+    }
+
+    .window__input-container {
+      background: pink;
+    }
+  }
+
+  .sidebar {
+    height: $m-size;
+    order: -1;
+    background: red;
+
+    .sidebar__profile-container {
+    }
+
+    .sidebar__users-container {
+    }
+
+    .sidebar__exit-container {
+    }
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    flex-direction: row;
+
+    .sidebar {
+      order: 2;
+      height: 100%;
+    }
+  }
+}
