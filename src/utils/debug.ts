@@ -1,6 +1,9 @@
 import { useEffect } from 'react';
 
-// helper function for debugging any data. New log is rendered each time said data mutates.
+/**
+ * * Helper function for debugging. New log is rendered each time data mutates
+ * @param data Any data intended for logging
+ */
 
 const Debug = <T>(data: T) => {
   useEffect(() => {

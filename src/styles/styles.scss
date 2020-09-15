@@ -1,4 +1,9 @@
+@import '~antd/dist/antd.css';
+
 @import './base/base';
 @import './base/settings';
 
 @import './components/chat';
+@import './components/filters';
+@import './components/messages';
+@import './components/messages-box';
