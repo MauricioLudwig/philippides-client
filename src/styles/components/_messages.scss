@@ -1,0 +1,49 @@
+.messages-list--empty {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.message {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 2rem;
+
+  .user {
+    color: dimgray;
+    font-weight: bold;
+    margin-bottom: 4px;
+  }
+
+  .body {
+    > p {
+      background: aliceblue;
+      border-radius: 4px;
+      padding: $s-size;
+      max-width: 60%;
+      margin: 0;
+    }
+  }
+
+  .body--highlight {
+    > p {
+      background: floralwhite;
+    }
+  }
+
+  em {
+    background: yellow;
+    font-style: normal;
+  }
+}
+
+.message--align-right {
+  align-items: flex-end;
+
+  .body {
+    > p {
+      max-width: unset;
+    }
+  }
+}

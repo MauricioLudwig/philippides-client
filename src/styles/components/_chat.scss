@@ -10,41 +10,67 @@
     display: flex;
     flex-direction: column;
 
-    .window__filters-container {
-      background: green;
+    .window__filters {
+      background: $night;
     }
 
-    .window__messages-container {
-      background: magenta;
-      flex: 1;
+    .window__messages {
+      background: white;
+      overflow-y: scroll;
+      padding: $s-size;
+      border-top: 1px solid $fog;
+      height: calc(100vh - 216px);
     }
 
-    .window__input-container {
-      background: pink;
+    .window__message-box {
+      background: whitesmoke;
     }
   }
 
   .sidebar {
-    height: $m-size;
+    display: flex;
+    height: $navbar-height;
     order: -1;
-    background: red;
 
-    .sidebar__profile-container {
+    .sidebar__account {
+      background: darkslategray;
+      flex: 1;
     }
 
-    .sidebar__users-container {
-    }
-
-    .sidebar__exit-container {
+    .sidebar__users {
+      display: none;
     }
   }
 
   @media (min-width: $desktop-breakpoint) {
     flex-direction: row;
 
+    .window {
+      flex: 9;
+
+      .window__messages {
+        flex: 1;
+        height: unset;
+      }
+    }
+
     .sidebar {
+      flex: 3;
       order: 2;
       height: 100%;
+      flex-direction: column;
+
+      .sidebar__account {
+        height: $navbar-height;
+        flex: unset;
+      }
+
+      .sidebar__users {
+        flex: 1;
+        background: gainsboro;
+        overflow-y: scroll;
+        display: block;
+      }
     }
   }
 }

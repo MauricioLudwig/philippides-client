@@ -1,0 +1,18 @@
+.filters {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: $s-size;
+
+  .wrapper {
+    display: flex;
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    .wrapper {
+      > input {
+        margin-right: $s-size;
+      }
+    }
+  }
+}

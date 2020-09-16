@@ -1,0 +1,5 @@
+.user-list {
+  > div:nth-child(odd) {
+    background: whitesmoke;
+  }
+}

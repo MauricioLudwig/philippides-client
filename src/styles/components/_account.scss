@@ -1,0 +1,11 @@
+.account {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  height: 100%;
+}
+
+.account__name {
+  color: lightgray;
+  font-weight: bold;
+}

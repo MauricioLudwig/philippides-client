@@ -1,3 +1,4 @@
+// action types
 export enum Type {
   UPDATE_FORM_INPUT = 'UPDATE_FORM_INPUT',
   LOGIN_REQUEST = 'LOGIN_REQUEST',
@@ -5,6 +6,7 @@ export enum Type {
   LOGIN_FAILURE = 'LOGIN_FAILURE',
 }
 
+// actions
 interface IAction {
   type: Type;
 }
@@ -18,6 +20,7 @@ export interface IUpdateFormInput extends IAction {
 
 export type Action = IUpdateFormInput;
 
+// state
 type Form = {
   username: string;
 };
