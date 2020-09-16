@@ -25,7 +25,23 @@ All formatting is handled by Prettier. Additionally, (almost) all the strict TS 
 
 **Redux vs. useContext + useReducer**
 
+A lot can be said in regards to this debate. There is no doubt that a proven state management library such as Redux (or similar) should be utilized in every instance when the project is expected to grow. It can also be said that Redux tends to be used gratuitously, seeing as small web apps rarely require the bulk and verbose clutter of Redux. Thus, with such a simple program at hand, I have opted for using useContext + useReducer (in order to achieve a similar yet distinctly different pattern to Redux).
+
 **Dataflow**
+
+I've approached the problem by considering both sockets and traditional http requests (1 in total).
+The socket connection is established only once you enter the chat page. The flow (as conveyed in the screenshot below) follows:
+
+```
+1. user attempts to login (a post request is issued to the server) with the designated name.
+2. the server either accepts or rejects the request, storing the user in the user table and sending back the unique id associated with said user.
+3. user is redirected to the chat window.
+4. the client attempts to invoke a socket connection using the unique id issued previously by the server.
+5A. (in case of failure), the client clears the auth records and redirects back to the login page
+5B. (in case of success), the connection is established and any subsequent calls are processed per usual.
+```
+
+![Alt text](/screenshots/data-flow-chart.PNG?raw=true "Data flowchart")
 
 **Styling**
 
