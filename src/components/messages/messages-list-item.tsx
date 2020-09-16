@@ -8,14 +8,18 @@ interface IProps {
 }
 
 const MessagesListItem: React.FC<IProps> = ({ message }) => {
-  const { id, admin, user, text, created } = message;
+  const { admin, user, text, created } = message;
+
+  const messageClasses = classNames('message', {
+    'message--align-right': message.user === 'Damien',
+  });
 
   const bodyClasses = classNames('body', {
     'body--highlight': admin,
   });
 
   return (
-    <div className="message">
+    <div className={messageClasses}>
       <p className="user">{admin ? 'Administrator' : user}</p>
       <div className={bodyClasses}>
         <p dangerouslySetInnerHTML={{ __html: text }} />

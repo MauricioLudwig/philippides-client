@@ -1,12 +1,20 @@
-import React, { useContext } from 'react';
+import React, { useContext, useEffect, useRef, Fragment } from 'react';
 import { ChatContext } from 'pages/chat/contexts';
 import { filterMessages } from 'selectors/messages';
 import MessagesListItem from './messages-list-item';
 
 const MessagesList = () => {
+  const messagesListContainerBtm = useRef<HTMLDivElement | null>(null);
+
   const {
     state: { filters, messages },
   } = useContext(ChatContext);
+
+  useEffect(() => {
+    messagesListContainerBtm.current?.scrollIntoView({
+      behavior: 'smooth',
+    });
+  }, [messages]);
 
   const filteredMessages = filterMessages(filters, messages);
 
@@ -19,11 +27,14 @@ const MessagesList = () => {
   }
 
   return (
-    <div>
-      {filteredMessages.map((message) => (
-        <MessagesListItem key={message.id} message={message} />
-      ))}
-    </div>
+    <Fragment>
+      <div>
+        {filteredMessages.map((message) => (
+          <MessagesListItem key={message.id} message={message} />
+        ))}
+      </div>
+      <div ref={messagesListContainerBtm} />
+    </Fragment>
   );
 };
 

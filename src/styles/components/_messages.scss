@@ -6,6 +6,8 @@
 }
 
 .message {
+  display: flex;
+  flex-direction: column;
   margin-bottom: 2rem;
 
   .user {
@@ -33,5 +35,15 @@
   em {
     background: yellow;
     font-style: normal;
+  }
+}
+
+.message--align-right {
+  align-items: flex-end;
+
+  .body {
+    > p {
+      max-width: unset;
+    }
   }
 }

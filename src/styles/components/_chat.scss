@@ -15,11 +15,11 @@
     }
 
     .window__messages {
-      flex: 1;
       background: white;
       overflow-y: scroll;
       padding: $s-size;
       border-top: 1px solid $fog;
+      height: calc(100vh - 216px);
     }
 
     .window__message-box {
@@ -28,17 +28,17 @@
   }
 
   .sidebar {
+    display: flex;
     height: $navbar-height;
     order: -1;
-    background: red;
 
-    .sidebar__profile-container {
+    .sidebar__account {
+      background: darkslategray;
+      flex: 1;
     }
 
-    .sidebar__users-container {
-    }
-
-    .sidebar__exit-container {
+    .sidebar__users {
+      display: none;
     }
   }
 
@@ -47,12 +47,30 @@
 
     .window {
       flex: 9;
+
+      .window__messages {
+        flex: 1;
+        height: unset;
+      }
     }
 
     .sidebar {
       flex: 3;
       order: 2;
       height: 100%;
+      flex-direction: column;
+
+      .sidebar__account {
+        height: $navbar-height;
+        flex: unset;
+      }
+
+      .sidebar__users {
+        flex: 1;
+        background: gainsboro;
+        overflow-y: scroll;
+        display: block;
+      }
     }
   }
 }

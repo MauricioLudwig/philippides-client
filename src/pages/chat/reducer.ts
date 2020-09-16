@@ -4,7 +4,23 @@ import { messages } from 'tests/fixtures/messages';
 // TODO remove test data!
 
 export const chatInitialState: State = {
-  users: [],
+  users: [
+    {
+      name: 'Damien',
+    },
+    {
+      name: 'Franz',
+    },
+    {
+      name: 'Scapigliata',
+    },
+    {
+      name: 'Batman',
+    },
+    {
+      name: 'Bruce',
+    },
+  ],
   messages,
   filters: {
     text: '',
