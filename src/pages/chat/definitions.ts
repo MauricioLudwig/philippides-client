@@ -13,7 +13,7 @@ export enum Type {
  */
 export type AddUser = {
   type: Type.ADD_USER;
-  payload: IUser;
+  payload: string[];
 };
 
 export type AddMessage = {
@@ -36,7 +36,7 @@ export type Action = AddUser | AddMessage | UpdateFilter | ResetFilter;
  * * State
  */
 export type State = {
-  users: Array<IUser>;
+  users: string[];
   messages: Array<IMessage>;
   filters: IMessageFilters;
 };
@@ -44,10 +44,6 @@ export type State = {
 /**
  * * Custom types
  */
-export interface IUser {
-  name: string;
-}
-
 export interface IMessage {
   id: string;
   admin: boolean;

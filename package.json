@@ -2,6 +2,7 @@
   "name": "philippides-client",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:4000",
   "dependencies": {
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.3.2",
@@ -21,7 +22,6 @@
     "react-dom": "^16.13.1",
     "react-router-dom": "^5.2.0",
     "react-scripts": "3.4.3",
-    "react-spinkit": "^3.0.0",
     "socket.io-client": "^2.3.0",
     "typescript": "~3.7.2"
   },
@@ -48,7 +48,6 @@
   },
   "devDependencies": {
     "@types/classnames": "^2.2.10",
-    "@types/react-spinkit": "^3.0.6",
     "@types/socket.io-client": "^1.4.33"
   }
 }
