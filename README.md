@@ -25,9 +25,9 @@ All formatting is handled by Prettier. Additionally, (almost) all the strict TS 
 
 **Redux vs. useContext + useReducer**
 
-**Styling**
-
 **Dataflow**
+
+**Styling**
 
 Styling is entirely done with SASS as well as leveraging certain components from Ant Design.
 Additionally, all design is approached from a mobile-first perspective.
