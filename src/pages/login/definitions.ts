@@ -6,19 +6,43 @@ export enum Type {
   LOGIN_FAILURE = 'LOGIN_FAILURE',
 }
 
-// actions
-interface IAction {
-  type: Type;
-}
+/**
+ * * Actions
+ */
 
-export interface IUpdateFormInput extends IAction {
+export type LoginRequest = {
+  type: Type.LOGIN_REQUEST;
+};
+
+export type LoginSuccess = {
+  type: Type.LOGIN_SUCCESS;
+  payload: {
+    id: string;
+    socketId: string | null;
+    name: string;
+  };
+};
+
+export type LoginFailure = {
+  type: Type.LOGIN_FAILURE;
+  payload: {
+    error: string;
+  };
+};
+
+export type UpdateFormInput = {
+  type: Type.UPDATE_FORM_INPUT;
   payload: {
     name: string;
     value: string | boolean | number;
   };
-}
+};
 
-export type Action = IUpdateFormInput;
+export type Action =
+  | LoginRequest
+  | LoginSuccess
+  | LoginFailure
+  | UpdateFormInput;
 
 // state
 type Form = {

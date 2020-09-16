@@ -1,5 +1,10 @@
-.user-list {
-  > div:nth-child(odd) {
+.user-card {
+  &:nth-child(odd) {
     background: whitesmoke;
   }
+}
+
+.user-card.user-card--highlight {
+  background: darkseagreen;
+  color: green;
 }

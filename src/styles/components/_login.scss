@@ -1,0 +1,37 @@
+.login-layout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  background: url('/images/bg.jpg');
+  background-size: cover;
+  height: 100vh;
+  width: 100vw;
+
+  .login-layout__box {
+    background: fade-out(white, 0.15);
+    border-radius: 3px;
+    width: 35rem;
+    height: 100vh;
+    padding: 5rem 3rem;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+    text-align: center;
+
+    .box__login-btn,
+    .box__alert {
+      margin-top: $s-size;
+    }
+
+    .box__subtitle {
+      color: slategray;
+      font-size: 16px;
+      margin-bottom: $s-size;
+    }
+  }
+
+  @media (min-width: $desktop-breakpoint) {
+    .login-layout__box {
+      height: auto;
+    }
+  }
+}
