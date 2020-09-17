@@ -1,4 +1,6 @@
-export const messages = [
+import { IMessage } from 'pages/chat/definitions';
+
+export const messages: Array<IMessage> = [
   {
     id: '1',
     admin: true,

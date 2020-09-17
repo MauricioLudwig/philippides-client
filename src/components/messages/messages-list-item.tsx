@@ -28,7 +28,7 @@ const MessagesListItem: React.FC<IProps> = ({ message }) => {
       <div className={bodyClasses}>
         <p dangerouslySetInnerHTML={{ __html: text }} />
       </div>
-      <small>{moment(created).fromNow()}</small>
+      <small>{moment(created).format('MMMM Do YYYY, h:mm')}</small>
     </div>
   );
 };

@@ -6,7 +6,6 @@
 
   .window {
     flex: 1;
-    background: yellow;
     display: flex;
     flex-direction: column;
 
@@ -15,7 +14,7 @@
     }
 
     .window__messages {
-      background: white;
+      background: $white;
       overflow-y: scroll;
       padding: $s-size;
       border-top: 1px solid $fog;
@@ -23,7 +22,7 @@
     }
 
     .window__message-box {
-      background: whitesmoke;
+      background: $fog;
     }
   }
 
@@ -33,7 +32,7 @@
     order: -1;
 
     .sidebar__account {
-      background: darkslategray;
+      background: $dark-slate-gray;
       flex: 1;
     }
 
@@ -67,7 +66,7 @@
 
       .sidebar__users {
         flex: 1;
-        background: gainsboro;
+        background: $gainsboro;
         overflow-y: scroll;
         display: block;
       }

@@ -1,5 +1,4 @@
 import React, { useContext } from 'react';
-import { useHistory } from 'react-router-dom';
 import { Button } from 'antd';
 import { AuthContext } from 'utils/contexts';
 import { Type } from 'reducers/auth/definitions';
@@ -10,7 +9,6 @@ interface IProps {
 
 const Account: React.FC<IProps> = ({ name }) => {
   const { authDispatch } = useContext(AuthContext);
-  const history = useHistory();
 
   const onClickHandler = () => {
     authDispatch({

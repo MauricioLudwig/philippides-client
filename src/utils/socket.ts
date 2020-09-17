@@ -1,7 +1,6 @@
 export enum SocketType {
+  Disconnect = 'disconnect',
   NewMessage = 'new-message',
-  UserDisconnected = 'user-disconnected',
-  UserInactive = 'user-inactive',
-
   ActiveUsers = 'active-users',
+  Alert = 'alert',
 }

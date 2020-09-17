@@ -1,4 +1,6 @@
-// action types
+/**
+ * * Action types
+ */
 export enum Type {
   UPDATE_FORM_INPUT = 'UPDATE_FORM_INPUT',
   LOGIN_REQUEST = 'LOGIN_REQUEST',
@@ -9,7 +11,6 @@ export enum Type {
 /**
  * * Actions
  */
-
 export type LoginRequest = {
   type: Type.LOGIN_REQUEST;
 };
@@ -44,7 +45,9 @@ export type Action =
   | LoginFailure
   | UpdateFormInput;
 
-// state
+/**
+ * * State
+ */
 type Form = {
   username: string;
 };

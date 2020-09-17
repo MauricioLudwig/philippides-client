@@ -39,11 +39,15 @@ const Chat = () => {
       });
     });
 
-    socketRef.current.on('disconnect', () => {
+    socketRef.current.on(SocketType.Disconnect, () => {
       authDispatch({
         type: AuthType.SET_ACCOUNT,
         payload: null,
       });
+    });
+
+    socketRef.current.on(SocketType.Alert, (data: any) => {
+      alert(`Ops, something went wrong: ${data}`);
     });
 
     return () => {

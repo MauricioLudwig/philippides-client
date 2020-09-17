@@ -8,7 +8,7 @@
 .message {
   display: flex;
   flex-direction: column;
-  margin-bottom: 2rem;
+  margin-bottom: $s-x2-size;
 
   .user {
     color: dimgray;
@@ -33,7 +33,7 @@
   }
 
   em {
-    background: yellow;
+    background: $yellow;
     font-style: normal;
   }
 }

@@ -1,10 +1,10 @@
 .user-card {
   &:nth-child(odd) {
-    background: whitesmoke;
+    background: $mist;
   }
 }
 
 .user-card.user-card--highlight {
-  background: darkseagreen;
-  color: green;
+  background: $seagrass;
+  color: $white;
 }
