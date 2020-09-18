@@ -1,8 +1,13 @@
 .account {
   display: flex;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100%;
+  padding: $s-size;
+
+  @media (min-width: $desktop-breakpoint) {
+    justify-content: space-around;
+  }
 }
 
 .account__name {

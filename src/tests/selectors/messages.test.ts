@@ -41,6 +41,11 @@ describe('test suites for text filtering', () => {
       userType: UserType.All,
     };
 
-    expect(filterMessages(filters, messages)).toEqual([messages[2]]);
+    expect(filterMessages(filters, messages)).toEqual([
+      {
+        ...messages[2],
+        text: 'Hello <em>World</em>!',
+      },
+    ]);
   });
 });

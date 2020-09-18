@@ -1,32 +1,20 @@
-import React, { useContext } from 'react';
+import React from 'react';
 import { Button } from 'antd';
-import { AuthContext } from 'utils/contexts';
-import { Type } from 'reducers/auth/definitions';
 
 interface IProps {
   name: string;
+  signOut: () => void;
 }
 
-const Account: React.FC<IProps> = ({ name }) => {
-  const { authDispatch } = useContext(AuthContext);
-
-  const onClickHandler = () => {
-    authDispatch({
-      type: Type.SET_ACCOUNT,
-      payload: null,
-    });
-  };
-
-  return (
-    <div className="account">
-      <div className="account__name">
-        <p>{name}</p>
-      </div>
-      <div className="account__exit">
-        <Button onClick={onClickHandler}>Sign out</Button>
-      </div>
+const Account: React.FC<IProps> = ({ name, signOut }) => (
+  <div className="account">
+    <div className="account__name">
+      <p>{name}</p>
     </div>
-  );
-};
+    <div className="account__exit">
+      <Button onClick={signOut}>Sign out</Button>
+    </div>
+  </div>
+);
 
 export default Account;

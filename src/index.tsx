@@ -23,10 +23,8 @@ const App: React.FC<IProps> = ({ children }) => {
 };
 
 ReactDOM.render(
-  <React.StrictMode>
-    <App>
-      <AppRouter />
-    </App>
-  </React.StrictMode>,
+  <App>
+    <AppRouter />
+  </App>,
   document.getElementById('root')
 );

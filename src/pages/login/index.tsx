@@ -5,12 +5,14 @@ import { Type } from './definitions';
 import { Input, Button, Alert, Typography } from 'antd';
 import { AuthContext } from 'utils/contexts';
 import { Type as AuthTypes } from 'reducers/auth/definitions';
-import Debug from 'utils/debug';
 
 const { Title } = Typography;
 
 const Login = () => {
-  const { authState, authDispatch } = useContext(AuthContext);
+  const {
+    authState: { info },
+    authDispatch,
+  } = useContext(AuthContext);
   const [state, dispatch] = useReducer(loginReducer, loginInitialState);
   const {
     form: { username },
@@ -67,7 +69,6 @@ const Login = () => {
 
   return (
     <div className="login-layout">
-      <Debug data={authState} />
       <div className="login-layout__box">
         <Title level={2}>Philippides</Title>
         <p className="box__subtitle">
@@ -94,9 +95,17 @@ const Login = () => {
         {error && (
           <Alert
             className="box__alert"
-            message="Ops, something went wrong..."
+            message="Oops, something went wrong..."
             description={error}
             type="error"
+          />
+        )}
+        {info && (
+          <Alert
+            className="box__alert"
+            message="Notification"
+            description={info}
+            type="warning"
           />
         )}
       </div>
